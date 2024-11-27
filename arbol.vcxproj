@@ -128,11 +128,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="arbol.h" />
-    <ClInclude Include="interfaz.h" />
     <ClInclude Include="nodo.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="interfaz.cpp" />
     <ClCompile Include="nodo.cpp" />
     <ClCompile Include="source.cpp" />
   </ItemGroup>

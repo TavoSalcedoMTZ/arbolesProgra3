@@ -46,3 +46,35 @@ void Nodo::MostrarArbol(Nodo* arbol, int n)
         MostrarArbol(arbol->izq, n + 1);  
     }
 }
+
+void Nodo::MostrarArbolPreOrden(Nodo* arbol, int n)
+{
+    if (arbol == nullptr) {
+        return;
+    }
+    
+    for (int i = 0; i < n; i++) {
+        std::cout<<(" ");
+    }
+    std::cout << arbol->dato << std::endl;
+
+    MostrarArbolPreOrden(arbol->izq, n + 1);
+    MostrarArbolPreOrden(arbol->dere, n + 1);
+}
+
+void Nodo::MostrarArbolPostOrden(Nodo* arbol, int n)
+{
+    if (arbol == nullptr) {
+        return;
+    }
+
+        MostrarArbolPreOrden(arbol->izq, n + 1);
+        MostrarArbolPreOrden(arbol->dere, n + 1);
+
+        for (int i = 0; i < n; i++) {
+            std::cout << (" ");
+        }
+        std::cout << arbol->dato << std::endl;
+    }
+
+

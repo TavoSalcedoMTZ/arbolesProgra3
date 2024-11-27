@@ -9,7 +9,8 @@ public:
     Nodo* CrearNodo(int n);  
     void InsertarNodo(Nodo*& arbol, int n);
     void MostrarArbol(Nodo* arbol, int n = 0);  
-
+    void MostrarArbolPreOrden(Nodo* arbol, int n=0);
+    void MostrarArbolPostOrden(Nodo* arbol, int n = 0);
 private:
     int dato;
     Nodo* dere;
