@@ -1,68 +1,43 @@
 #include <iostream>
-#include <fstream>
 #include "nodo.h"
 
 void menu() {
-    int dato;
     int opcion;
     Nodo arbolito;
     Nodo* arbol = nullptr;
 
-    std::ofstream archivo("arbol.txt");
 
-    if (!archivo.is_open()) {
-        std::cerr << "No se pudo abrir el archivo para escribir." << std::endl;
-        return; 
-    }
+    arbolito.CargarArbol(arbol);
 
     do {
-        std::cout << "\n Ingrese una opcion" << std::endl;
-        std::cout << "\n 1 Insertar un nuevo nodo" << std::endl;
-        std::cout << "\n 2 Mostrar Arbol" << std::endl;
-        std::cout << "\n 3 Mostrar Arbol PreOrden" << std::endl;
-        std::cout << "\n 4 Mostrar Arbol PostOrden" << std::endl;
-        std::cout << "\n 5 Salir" << std::endl;
+        std::cout << "Menu Akinator\n";
+        std::cout << "1. Jugar\n";
+        std::cout << "2. Ver árbol\n";
+        std::cout << "3. Salir\n";
+        std::cout << "Elige una opción: ";
         std::cin >> opcion;
 
         switch (opcion) {
         case 1:
-            std::cout << "\n Ingresa un numero: " << std::endl;
-            std::cin >> dato;
-            arbolito.InsertarNodo(arbol, dato);
+            arbolito.Akinator(arbol);  
             break;
-
         case 2:
+        {
+            std::ofstream archivo("arbol.txt");
             arbolito.MostrarArbol(arbol, 0, archivo);  
-            std::cout << "\n" << std::endl;
-            std::cout << "\nArbol guardado en el archivo." << std::endl;
-            break;
-
-        case 3:
-            arbolito.MostrarArbolPreOrden(arbol, 0, archivo); 
-            std::cout << "\n" << std::endl;
-            std::cout << "\nArbol en PreOrden guardado en el archivo." << std::endl;
-            break;
-
-        case 4:
-            arbolito.MostrarArbolPostOrden(arbol, 0, archivo);
-            std::cout << "\n" << std::endl;
-            std::cout << "\nArbol en PostOrden guardado en el archivo." << std::endl;
-            break;
-
-        case 5:
-            std::cout << "Saliendo del programa" << std::endl;
-            break;
-
-        default:
-            std::cout << "ERROR" << std::endl;
             break;
         }
-    } while (opcion != 5);
-
-    archivo.close();  
+        case 3:
+            std::cout << "Saliendo...\n";
+            break;
+        default:
+            std::cout << "Opción no válida.\n";
+            break;
+        }
+    } while (opcion != 3);
 }
 
 int main() {
-    menu();
+    menu(); 
     return 0;
 }
