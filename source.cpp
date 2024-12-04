@@ -1,3 +1,5 @@
+#include <iostream>
+#include <fstream>
 #include "nodo.h"
 
 void menu() {
@@ -5,6 +7,13 @@ void menu() {
     int opcion;
     Nodo arbolito;
     Nodo* arbol = nullptr;
+
+    std::ofstream archivo("arbol.txt");
+
+    if (!archivo.is_open()) {
+        std::cerr << "No se pudo abrir el archivo para escribir." << std::endl;
+        return; 
+    }
 
     do {
         std::cout << "\n Ingrese una opcion" << std::endl;
@@ -20,26 +29,37 @@ void menu() {
             std::cout << "\n Ingresa un numero: " << std::endl;
             std::cin >> dato;
             arbolito.InsertarNodo(arbol, dato);
-            std::cout << "\n" << std::endl;
             break;
 
         case 2:
-            arbolito.MostrarArbol(arbol);
+            arbolito.MostrarArbol(arbol, 0, archivo);  
             std::cout << "\n" << std::endl;
+            std::cout << "\nArbol guardado en el archivo." << std::endl;
             break;
 
         case 3:
-            arbolito.MostrarArbolPreOrden(arbol);
+            arbolito.MostrarArbolPreOrden(arbol, 0, archivo); 
             std::cout << "\n" << std::endl;
+            std::cout << "\nArbol en PreOrden guardado en el archivo." << std::endl;
             break;
-
 
         case 4:
-            arbolito.MostrarArbolPostOrden(arbol);
+            arbolito.MostrarArbolPostOrden(arbol, 0, archivo);
             std::cout << "\n" << std::endl;
+            std::cout << "\nArbol en PostOrden guardado en el archivo." << std::endl;
+            break;
+
+        case 5:
+            std::cout << "Saliendo del programa" << std::endl;
+            break;
+
+        default:
+            std::cout << "ERROR" << std::endl;
             break;
         }
-    } while (opcion != 5);  
+    } while (opcion != 5);
+
+    archivo.close();  
 }
 
 int main() {

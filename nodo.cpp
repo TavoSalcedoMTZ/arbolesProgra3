@@ -1,80 +1,82 @@
 #include "nodo.h"
 
 Nodo::Nodo() {
- 
     dere = izq = nullptr;
 }
 
 Nodo* Nodo::CrearNodo(int n)
 {
-    Nodo* Temp = new Nodo();  
+    Nodo* Temp = new Nodo();
     Temp->dato = n;
     Temp->dere = nullptr;
     Temp->izq = nullptr;
-    return Temp;  
+    return Temp;
 }
 
 void Nodo::InsertarNodo(Nodo*& arbol, int n)
 {
     if (arbol == nullptr) {
-        Nodo* Temp = CrearNodo(n);  
-        arbol = Temp;  
+        Nodo* Temp = CrearNodo(n);
+        arbol = Temp;
     }
     else {
         int ValorRaiz = arbol->dato;
         if (n < ValorRaiz) {
-            InsertarNodo(arbol->izq, n); 
+            InsertarNodo(arbol->izq, n);
         }
         else {
-            InsertarNodo(arbol->dere, n);  
+            InsertarNodo(arbol->dere, n);
         }
     }
 }
 
-void Nodo::MostrarArbol(Nodo* arbol, int n)
+void Nodo::MostrarArbol(Nodo* arbol, int n, std::ofstream& archivo)
 {
     if (arbol == nullptr) {
-        return;  
+        return;
     }
     else {
-        MostrarArbol(arbol->dere, n + 1); 
+        MostrarArbol(arbol->dere, n + 1, archivo);  
         for (int i = 0; i < n; i++) {
-            std::cout << " ";  
+            std::cout << " ";
         }
 
         std::cout << arbol->dato << std::endl;  
-        MostrarArbol(arbol->izq, n + 1);  
+        archivo << arbol->dato << std::endl;  
+        MostrarArbol(arbol->izq, n + 1, archivo);  
     }
 }
 
-void Nodo::MostrarArbolPreOrden(Nodo* arbol, int n)
+void Nodo::MostrarArbolPreOrden(Nodo* arbol, int n, std::ofstream& archivo)
 {
     if (arbol == nullptr) {
         return;
     }
-    
+
     for (int i = 0; i < n; i++) {
-        std::cout<<(" ");
+        std::cout << " ";  
+        archivo << " ";  
     }
-    std::cout << arbol->dato << std::endl;
+    std::cout << arbol->dato << std::endl; 
+    archivo << arbol->dato << std::endl;
 
-    MostrarArbolPreOrden(arbol->izq, n + 1);
-    MostrarArbolPreOrden(arbol->dere, n + 1);
+    MostrarArbolPreOrden(arbol->izq, n + 1, archivo); 
+    MostrarArbolPreOrden(arbol->dere, n + 1, archivo);  
 }
 
-void Nodo::MostrarArbolPostOrden(Nodo* arbol, int n)
+void Nodo::MostrarArbolPostOrden(Nodo* arbol, int n, std::ofstream& archivo)
 {
     if (arbol == nullptr) {
         return;
     }
 
-        MostrarArbolPreOrden(arbol->izq, n + 1);
-        MostrarArbolPreOrden(arbol->dere, n + 1);
+    MostrarArbolPostOrden(arbol->izq, n + 1, archivo);  
+    MostrarArbolPostOrden(arbol->dere, n + 1, archivo);
 
-        for (int i = 0; i < n; i++) {
-            std::cout << (" ");
-        }
-        std::cout << arbol->dato << std::endl;
+    for (int i = 0; i < n; i++) {
+        std::cout << " "; 
+        archivo << " ";  
     }
-
-
+    std::cout << arbol->dato << std::endl;  
+    archivo << arbol->dato << std::endl; 
+}
