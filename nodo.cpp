@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include "nodo.h"
 
 Nodo::Nodo() {
@@ -148,3 +149,8 @@ void Nodo::Akinator(Nodo* arbol) {
         }
     }
 }
+=======
+#include "Nodo.h"
+
+Nodo::Nodo(const std::string& dato) : dato(dato), izq(nullptr), dere(nullptr) {}
+>>>>>>> e895e7b (Akinator funcional)

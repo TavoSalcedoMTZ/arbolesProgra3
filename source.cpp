@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #include <iostream>
 #include "nodo.h"
 
@@ -39,5 +40,25 @@ void menu() {
 
 int main() {
     menu(); 
+=======
+#include "Akinator.h"
+
+int main() {
+    Akinator akinator;
+    const std::string archivo = "akinator.txt";
+    akinator.cargar(archivo);
+
+    int opcion;
+    do {
+        std::cout << std::endl << "1. Jugar " << std::endl<<" 2. Guardar y salir"<<std::endl<<"Elige una opcion : "<<std::endl;
+        std::cin >> opcion;
+
+        if (opcion == 1) {
+            akinator.jugar();
+        }
+    } while (opcion != 2);
+
+    akinator.guardar(archivo);
+>>>>>>> e895e7b (Akinator funcional)
     return 0;
 }

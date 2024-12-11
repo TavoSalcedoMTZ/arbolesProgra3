@@ -1,11 +1,14 @@
 #pragma once
+<<<<<<< HEAD
 #include <iostream>
 #include <fstream>
+=======
+>>>>>>> e895e7b (Akinator funcional)
 #include <string>
 
-class Nodo
-{
+class Nodo {
 public:
+<<<<<<< HEAD
     Nodo();
 
     Nodo* CrearNodo(std::string _p);
@@ -18,5 +21,11 @@ public:
 private:
     std::string preguntaTF;
     Nodo* dere;
+=======
+    std::string dato;
+>>>>>>> e895e7b (Akinator funcional)
     Nodo* izq;
+    Nodo* dere;
+
+    Nodo(const std::string& dato);
 };

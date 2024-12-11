@@ -1,0 +1,39 @@
+¿Es un animal?
+Hace miau?
+Gato
+#
+#
+SALTA?
+Tiene una bolsa?
+Un Canguro
+#
+#
+Perro
+#
+#
+Conejo
+#
+#
+Es un Instrumento?
+Se toca con teclas?
+Piano
+#
+#
+Tiene varias partes?
+Bateria
+#
+#
+Tuba
+Una Guitarra
+#
+#
+Es electronico?
+#
+#
+Forma parte de un set-up?
+Monitor
+#
+#
+Piedra
+#
+#
