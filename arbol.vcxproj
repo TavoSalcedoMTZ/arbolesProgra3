@@ -127,10 +127,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="akinator.h" />
     <ClInclude Include="arbol.h" />
     <ClInclude Include="nodo.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="akinator.cpp" />
     <ClCompile Include="nodo.cpp" />
     <ClCompile Include="source.cpp" />
   </ItemGroup>

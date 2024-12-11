@@ -1,18 +1,11 @@
 #pragma once
-#include <iostream>
+#include <string>
 
-class Nodo
-{
+class Nodo {
 public:
-    Nodo();
-
-    Nodo* CrearNodo(int n);  
-    void InsertarNodo(Nodo*& arbol, int n);
-    void MostrarArbol(Nodo* arbol, int n = 0);  
-    void MostrarArbolPreOrden(Nodo* arbol, int n=0);
-    void MostrarArbolPostOrden(Nodo* arbol, int n = 0);
-private:
-    int dato;
-    Nodo* dere;
+    std::string dato;
     Nodo* izq;
+    Nodo* dere;
+
+    Nodo(const std::string& dato);
 };
