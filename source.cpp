@@ -13,7 +13,10 @@ int main() {
         if (opcion == 1) {
             akinator.jugar();
         }
-    } while (opcion != 2);
+        else if (opcion == 2) {
+            akinator.mostrararbol();
+        }
+    } while (opcion != 3);
 
     akinator.guardar(archivo);
     return 0;

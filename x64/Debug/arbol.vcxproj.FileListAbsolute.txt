@@ -1,1 +1,2 @@
 C:\Users\Alumnos\source\repos\arbol\x64\Debug\arbol.exe
+C:\Users\Alumnos\Desktop\arbol\x64\Debug\arbol.exe

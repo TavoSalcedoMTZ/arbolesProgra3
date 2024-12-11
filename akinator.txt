@@ -1,37 +1,49 @@
-¿Es un animal?
-Hace miau?
-Gato
+Es un animal?
+Tiene garras?
+Vive en la Jungla?
+Es El Rey De La Selva=
+Un Leon
 #
 #
-SALTA?
-Tiene una bolsa?
-Un Canguro
+Un Tigre
+#
+#
+Un gato
+#
+#
+Es un roedor?
+Es conocido como el animal mas amistoso de todos?
+Un capibara
+#
+#
+Tiene Cola?
+Rata
+#
+#
+Un Hamster
 #
 #
 Perro
 #
 #
-Conejo
+Es un Instrumento
+Usa Teclas?
+Se usa Para ElectroPoP?
+Es totalmente electrico?
+Un sintetizador
 #
 #
-Es un Instrumento?
-Se toca con teclas?
-Piano
+Xilofono
 #
 #
-Tiene varias partes?
-Bateria
+Puede crear beats?
+ja De Ritmos
 #
 #
-Tuba
-Una Guitarra
+Un piano
 #
 #
-Es electronico?
-#
-#
-Forma parte de un set-up?
-Monitor
+Una guitarra
 #
 #
 Piedra
